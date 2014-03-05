@@ -17,7 +17,7 @@ CLLocationCoordinate2D coordinateFromUserInfo(NSDictionary* userInfo) {
 - (NSString *)urlencode {
     NSMutableString *output = [NSMutableString string];
     const unsigned char *source = (const unsigned char *)[self UTF8String];
-    int sourceLen = strlen((const char *)source);
+    unsigned long sourceLen = strlen((const char *)source);
     for (int i = 0; i < sourceLen; ++i) {
         const unsigned char thisChar = source[i];
         if (thisChar == ' '){

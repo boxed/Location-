@@ -35,7 +35,7 @@
     
     annotationProcessQueue = [[NSOperationQueue alloc] init];
 
-    RMMapBoxSource *onlineSource = [[RMMapBoxSource alloc] initWithMapID:(([[UIScreen mainScreen] scale] > 1.0) ? kRetinaMapID : kNormalMapID)];
+    RMMapboxSource *onlineSource = [[RMMapboxSource alloc] initWithMapID:(([[UIScreen mainScreen] scale] > 1.0) ? kRetinaMapID : kNormalMapID)];
     
     RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:onlineSource];
     
@@ -132,9 +132,9 @@
         [self presentViewController:wrapper animated:YES completion:nil];
     }
     else {
-//        CGRect rect = [sender frame];
-//        self->popover = [[UIPopoverController alloc] initWithContentViewController:wrapper];
-//        [self->popover presentPopoverFromRect:rect inView:self.mapView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        CGRect rect = [sender frame];
+        self->popover = [[UIPopoverController alloc] initWithContentViewController:wrapper];
+        [self->popover presentPopoverFromRect:rect inView:self.mapView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }
 }
 
@@ -190,11 +190,12 @@
         return marker;
     }
     else {
-        RMMarker *marker = [[RMMarker alloc] initWithMapBoxMarkerImage:annotation.userInfo[@"marker-symbol"]
+        RMMarker *marker = [[RMMarker alloc] initWithMapboxMarkerImage:annotation.userInfo[@"marker-symbol"]
                                                           tintColorHex:annotation.userInfo[@"marker-color"]
                                                             sizeString:annotation.userInfo[@"marker-size"]];
         if ([annotation.userInfo[@"tag"] isEqualToString:kDroppedPinTag]) {
-            marker.draggingEnabled = YES;
+//            marker->draggingEnabled = YES;
+            // TODO: enable dragging. The API has changed since Mapbox 1.0.3
         }
         marker.zPosition = 10;
         assert(marker);
@@ -219,7 +220,7 @@
             L3AnnotationDetailViewController *viewController = [[L3AnnotationDetailViewController alloc] initWithNibName:nil bundle:nil];
             viewController.delegate = self;
             UINavigationController *wrapper = [[UINavigationController alloc] initWithRootViewController:viewController];
-            wrapper.contentSizeForViewInPopover = CGSizeMake(320, 480);
+            wrapper.preferredContentSize = CGSizeMake(320, 480);
             self->popover = [[UIPopoverController alloc] initWithContentViewController:wrapper];
             self->popover.popoverContentSize = CGSizeMake(320, 480);
             CGPoint pt = [_mapView coordinateToPixel:self.currentAnnotation.coordinate];
@@ -360,7 +361,7 @@
         }
         else {
             assert(error);
-            NSLog(@"Search error: %@, %@ %d, %@, %@", url, error.domain, error.code, error.description, error.localizedDescription);
+            NSLog(@"Search error: %@, %@ %ld, %@, %@", url, error.domain, (long)error.code, error.description, error.localizedDescription);
             // TODO: add error handling
         }
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -658,7 +659,7 @@
         }
         else {
             assert(error);
-            NSLog(@"Route error: %@, %@ %d, %@, %@", url, error.domain, error.code, error.description, error.localizedDescription);
+            NSLog(@"Route error: %@, %@ %ld, %@, %@", url, error.domain, (long)error.code, error.description, error.localizedDescription);
         }
         self.animatedProgressView.hidden = YES;
         [self refreshAndSave:self];

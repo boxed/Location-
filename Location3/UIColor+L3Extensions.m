@@ -113,7 +113,7 @@
 
 - (NSString *)hexStringFromColor
 {
-	return [NSString stringWithFormat:@"%0.6lX", self.rgbHex];
+	return [NSString stringWithFormat:@"%0.6X", (unsigned int)self.rgbHex];
 }
 
 + (UIColor *)colorWithHexString:(NSString *)hexString
