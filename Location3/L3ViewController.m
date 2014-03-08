@@ -294,18 +294,6 @@
     return annotation;
 }
 
-- (void)showChooser:(NSArray*)items
-{
-    L3SearchChooserViewController *searchChooserController = [L3SearchChooserViewController searchChooserViewControllerWithArray:items];
-    searchChooserController.delegate = self;
-    
-    UINavigationController *wrapper = [[UINavigationController alloc] initWithRootViewController:searchChooserController];
-    wrapper.topViewController.title = @"Found places";
-    
-    [self presentViewController:wrapper animated:YES completion:nil];
-    self.animatedProgressView.hidden = YES;
-}
-
 - (void)addAnnotationsForQuery:(NSString*)q markerSymbol:(NSString*)markerSymbol tag:(NSString*)tag service:(NSString*)service localSearch:(BOOL)isLocalSearch
 {
     NSString* viewBox = @"";
@@ -490,6 +478,18 @@
     [self saveState];
 }
 
+- (void)showChooser:(NSArray*)items
+{
+    L3SearchChooserViewController *searchChooserController = [L3SearchChooserViewController searchChooserViewControllerWithArray:items];
+    searchChooserController.delegate = self;
+    
+    UINavigationController *wrapper = [[UINavigationController alloc] initWithRootViewController:searchChooserController];
+    wrapper.topViewController.title = @"Found places";
+    
+    [self presentViewController:wrapper animated:YES completion:nil];
+    self.animatedProgressView.hidden = YES;
+}
+
 - (void)searchChooserChoiceMade:(NSDictionary*)choice
 {
     RMAnnotation* annotation = [self addAnnotationForItem:choice markerSymbol:kCustomMarkerSymbol q:gGlobalState.customSearch tag:kCustomSearchTag];
@@ -501,7 +501,7 @@
         CLLocationCoordinate2D southWest = CLLocationCoordinate2DMake([boundingbox[0] floatValue], [boundingbox[2] floatValue]);
         CLLocationCoordinate2D northEast = CLLocationCoordinate2DMake([boundingbox[1] floatValue], [boundingbox[3] floatValue]);
         
-        [_mapView zoomWithLatitudeLongitudeBoundsSouthWest:southWest northEast:northEast animated:YES];
+        [_mapView setConstraintsSouthWest:southWest northEast:northEast];
     }
     
     _mapView.userTrackingMode = RMUserTrackingModeNone;

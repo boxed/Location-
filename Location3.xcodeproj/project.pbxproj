@@ -49,6 +49,7 @@
 		AEAA4B32181C0A1800C66492 /* L3AnnotationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEAA4B30181C0A1800C66492 /* L3AnnotationDetailViewController.xib */; };
 		AEAA4B38181C0B5D00C66492 /* RouteInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAA4B37181C0B5D00C66492 /* RouteInstruction.m */; };
 		AEAA4B3B181C10D000C66492 /* KMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAA4B3A181C10D000C66492 /* KMLParser.m */; };
+		AEEA12EE18CB7996008A491F /* Mapbox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AEEA12ED18CB7996008A491F /* Mapbox.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		AEAA4B37181C0B5D00C66492 /* RouteInstruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteInstruction.m; sourceTree = "<group>"; };
 		AEAA4B39181C10D000C66492 /* KMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMLParser.h; sourceTree = "<group>"; };
 		AEAA4B3A181C10D000C66492 /* KMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMLParser.m; sourceTree = "<group>"; };
+		AEEA12ED18CB7996008A491F /* Mapbox.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Mapbox.bundle; path = Pods/MapBox/Resources/Mapbox.bundle; sourceTree = "<group>"; };
 		B80EF0AC29F54E19940D9EFE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 		AEAA4AB5181BFAF600C66492 = {
 			isa = PBXGroup;
 			children = (
+				AEEA12ED18CB7996008A491F /* Mapbox.bundle */,
 				AEAA4AC7181BFAF700C66492 /* Location3 */,
 				AEAA4AE9181BFAF700C66492 /* Location3Tests */,
 				AEAA4AC0181BFAF700C66492 /* Frameworks */,
@@ -361,6 +364,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEEA12EE18CB7996008A491F /* Mapbox.bundle in Resources */,
 				AEAA4B02181BFE6700C66492 /* TrackingHeadingDark@2x.png in Resources */,
 				AEAA4B04181BFE6700C66492 /* TrackingLocationDark.png in Resources */,
 				AE4D85D618C84FAE00F2001D /* icon.png in Resources */,
