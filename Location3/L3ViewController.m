@@ -77,6 +77,8 @@
     [self restoreState];
     
     [self checkForRefresh];
+
+    self.mapView.showsUserLocation = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -116,7 +118,6 @@
             self.mapView.userTrackingMode = RMUserTrackingModeNone;
             break;
     }
-    self.mapView.showsUserLocation = YES;
     [self updateTrackingIcon];
 }
 
@@ -186,7 +187,7 @@
         return route;
     }
     else if ([annotation isKindOfClass:RMUserLocation.class]) {
-        RMMarker* marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"TrackingDot"]];
+        RMMarker* marker = [[RMMarker alloc] initWithUIImage:[RMMapView resourceImageNamed:@"TrackingDot.png"]];
         return marker;
     }
     else {
@@ -470,7 +471,6 @@
 
 
 #pragma mark annotation callout delegate
-#pragma mark -
 
 - (void)closeDetailView:(id)sender
 {
@@ -481,6 +481,8 @@
         [self->popover dismissPopoverAnimated:YES];
     }
 }
+
+#pragma mark -
 
 - (void)refreshAndSave:(id)sender
 {
