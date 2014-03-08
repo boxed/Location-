@@ -10,7 +10,12 @@ NSMutableDictionary* createFilterType(id tag, id markerSymbol, id title, id q) {
 }
 
 CLLocationCoordinate2D coordinateFromUserInfo(NSDictionary* userInfo) {
-    return CLLocationCoordinate2DMake([userInfo[@"latitude"] floatValue], [userInfo[@"longitude"] floatValue]);
+    if ([userInfo valueForKey:@"latitude"]) {
+        return CLLocationCoordinate2DMake([userInfo[@"latitude"] floatValue], [userInfo[@"longitude"] floatValue]);
+    }
+    else {
+        return CLLocationCoordinate2DMake([userInfo[@"lat"] floatValue], [userInfo[@"lon"] floatValue]);
+    }
 }
 
 @implementation NSString (NSString_Extended)

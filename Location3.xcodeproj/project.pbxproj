@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		44BC392FFADD44CEB3FAA1E1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B80EF0AC29F54E19940D9EFE /* libPods.a */; };
+		AE4D85D618C84FAE00F2001D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AE4D85D518C84FAE00F2001D /* icon.png */; };
 		AEAA4AC2181BFAF700C66492 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAA4AC1181BFAF700C66492 /* Foundation.framework */; };
 		AEAA4AC4181BFAF700C66492 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAA4AC3181BFAF700C66492 /* CoreGraphics.framework */; };
 		AEAA4AC6181BFAF700C66492 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAA4AC5181BFAF700C66492 /* UIKit.framework */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		8D1D89054DD04F28A22CBE8E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		AE4D85D518C84FAE00F2001D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = images/icon.png; sourceTree = "<group>"; };
 		AEAA4ABE181BFAF700C66492 /* Location3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Location3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEAA4AC1181BFAF700C66492 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AEAA4AC3181BFAF700C66492 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -183,10 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				AEAA4AF9181BFE5C00C66492 /* images */,
-				AEAA4B08181C062900C66492 /* OSM.png */,
-				AEAA4B09181C062900C66492 /* OSM@2x.png */,
-				AEAA4B0A181C062900C66492 /* search.png */,
-				AEAA4B0B181C062900C66492 /* search@2x.png */,
 				AEAA4AD0181BFAF700C66492 /* L3AppDelegate.h */,
 				AEAA4AD1181BFAF700C66492 /* L3AppDelegate.m */,
 				AEAA4AD3181BFAF700C66492 /* Main_iPhone.storyboard */,
@@ -251,6 +249,11 @@
 		AEAA4AF9181BFE5C00C66492 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				AEAA4B08181C062900C66492 /* OSM.png */,
+				AEAA4B09181C062900C66492 /* OSM@2x.png */,
+				AEAA4B0A181C062900C66492 /* search.png */,
+				AEAA4B0B181C062900C66492 /* search@2x.png */,
+				AE4D85D518C84FAE00F2001D /* icon.png */,
 				AEAA4AFA181BFE6700C66492 /* TrackingHeadingDark.png */,
 				AEAA4AFB181BFE6700C66492 /* TrackingHeadingDark@2x.png */,
 				AEAA4AFC181BFE6700C66492 /* TrackingHeadingDark@2x.psd */,
@@ -326,6 +329,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Anders Hovmöller";
 				TargetAttributes = {
+					AEAA4ABD181BFAF700C66492 = {
+						DevelopmentTeam = B6FVY827P9;
+					};
 					AEAA4AE1181BFAF700C66492 = {
 						TestTargetID = AEAA4ABD181BFAF700C66492;
 					};
@@ -357,6 +363,7 @@
 			files = (
 				AEAA4B02181BFE6700C66492 /* TrackingHeadingDark@2x.png in Resources */,
 				AEAA4B04181BFE6700C66492 /* TrackingLocationDark.png in Resources */,
+				AE4D85D618C84FAE00F2001D /* icon.png in Resources */,
 				AEAA4AD8181BFAF700C66492 /* Main_iPad.storyboard in Resources */,
 				AEAA4B0F181C062900C66492 /* search@2x.png in Resources */,
 				AEAA4B0E181C062900C66492 /* search.png in Resources */,
@@ -575,10 +582,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Location3/Location3-Prefix.pch";
 				INFOPLIST_FILE = "Location3/Location3-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -589,10 +599,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Location3/Location3-Prefix.pch";
 				INFOPLIST_FILE = "Location3/Location3-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

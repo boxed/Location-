@@ -65,7 +65,7 @@
     [self updateTrackingIcon];
     
     // Set up search button
-    UIButton* searchButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-25, 25, 20, 20)];
+    UIButton* searchButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-40, 20, 40, 40)];
     [searchButton setImage:[UIImage imageNamed:@"search.png"] forState:UIControlStateNormal];
     [searchButton addTarget:self action:@selector(presentSearch:) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:searchButton];
