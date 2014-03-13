@@ -496,16 +496,17 @@
     CLLocationCoordinate2D pos = coordinateFromUserInfo(annotation.userInfo);
     [_mapView setCenterCoordinate:pos animated:YES];
     
-    NSArray* boundingbox = choice[@"boundingbox"];
-    if (boundingbox) {
-        CLLocationCoordinate2D southWest = CLLocationCoordinate2DMake([boundingbox[0] floatValue], [boundingbox[2] floatValue]);
-        CLLocationCoordinate2D northEast = CLLocationCoordinate2DMake([boundingbox[1] floatValue], [boundingbox[3] floatValue]);
-        
-        [_mapView setConstraintsSouthWest:southWest northEast:northEast];
-    }
+//    NSArray* boundingbox = choice[@"boundingbox"];
+//    if (boundingbox) {
+//        CLLocationCoordinate2D southWest = CLLocationCoordinate2DMake([boundingbox[0] floatValue], [boundingbox[2] floatValue]);
+//        CLLocationCoordinate2D northEast = CLLocationCoordinate2DMake([boundingbox[1] floatValue], [boundingbox[3] floatValue]);
+//        
+//        // TODO: Set the correct zoom level. Note that zoomWithLatitudeLongitudeBoundsSouthWest:northEast ends up in weird places
+//    }
     
     _mapView.userTrackingMode = RMUserTrackingModeNone;
     [self updateTrackingIcon];
+    gGlobalState.customSearch = @"";
 }
 
 - (void)viewDidUnload {
