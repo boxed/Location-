@@ -19,9 +19,6 @@
 #define kRetinaMapID  @"boxed.map-ujmerxab"
 #define WEEK_IN_SECONDS 604800
 
-@interface L3ViewController ()
-
-@end
 
 @implementation L3ViewController
 
@@ -209,6 +206,20 @@
         
         return marker;
     }
+}
+
+- (void)longPressOnMap:(RMMapView *)map at:(CGPoint)point
+{
+    CLLocationCoordinate2D coordinate = [map pixelToCoordinate:point];
+    NSMutableDictionary* userInfo = @{
+                                      @"tag": kDroppedPinTag,
+                                      @"latitude": [NSString stringWithFormat:@"%f", coordinate.latitude],
+                                      @"longitude": [NSString stringWithFormat:@"%f", coordinate.longitude],
+                                      @"title": @"Dropped pin",
+                                      @"marker-color": @"#00AA00",
+                                      }.mutableCopy;
+    [gGlobalState.droppedPins addObject:userInfo];
+    [self addAnnotationForUserInfo:userInfo];
 }
 
 - (void)tapOnAnnotation:(RMAnnotation *)annotation onMap:(RMMapView *)map
