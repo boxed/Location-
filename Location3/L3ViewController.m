@@ -31,8 +31,16 @@
     requestedRefresh = [NSDate date];
     
     annotationProcessQueue = [[NSOperationQueue alloc] init];
+    
+    BOOL useRetina = [[UIScreen mainScreen] scale] > 1.0;
 
-    RMMapboxSource *onlineSource = [[RMMapboxSource alloc] initWithMapID:(([[UIScreen mainScreen] scale] > 1.0) ? kRetinaMapID : kNormalMapID)];
+    RMMapboxSource *onlineSource = [[RMMapboxSource alloc] initWithMapID:(useRetina ? kRetinaMapID : kNormalMapID)];
+    
+    if (onlineSource == nil) {
+        NSString *localTileJSONPath = [[NSBundle mainBundle] pathForResource:@"tilesource" ofType:@"json"];
+    
+        onlineSource = [[RMMapboxSource alloc] initWithReferenceURL:[NSURL fileURLWithPath:localTileJSONPath]];
+    }
     
     RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:onlineSource];
     
