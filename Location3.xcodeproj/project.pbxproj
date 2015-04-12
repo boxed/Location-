@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		44BC392FFADD44CEB3FAA1E1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B80EF0AC29F54E19940D9EFE /* libPods.a */; };
+		AE078BDA19C5ED3300E00A2A /* TODO.txt in Resources */ = {isa = PBXBuildFile; fileRef = AE078BD919C5ED3300E00A2A /* TODO.txt */; };
 		AE4D85D618C84FAE00F2001D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AE4D85D518C84FAE00F2001D /* icon.png */; };
 		AE5CD04418DB84C900CA2D90 /* tilesource.json in Resources */ = {isa = PBXBuildFile; fileRef = AE5CD04318DB84C900CA2D90 /* tilesource.json */; };
 		AEAA4AC2181BFAF700C66492 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAA4AC1181BFAF700C66492 /* Foundation.framework */; };
@@ -50,7 +51,6 @@
 		AEAA4B32181C0A1800C66492 /* L3AnnotationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEAA4B30181C0A1800C66492 /* L3AnnotationDetailViewController.xib */; };
 		AEAA4B38181C0B5D00C66492 /* RouteInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAA4B37181C0B5D00C66492 /* RouteInstruction.m */; };
 		AEAA4B3B181C10D000C66492 /* KMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAA4B3A181C10D000C66492 /* KMLParser.m */; };
-		AEEA12EE18CB7996008A491F /* Mapbox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AEEA12ED18CB7996008A491F /* Mapbox.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,9 +64,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8D1D89054DD04F28A22CBE8E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		AE078BD919C5ED3300E00A2A /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		AE4D85D518C84FAE00F2001D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = images/icon.png; sourceTree = "<group>"; };
 		AE5CD04318DB84C900CA2D90 /* tilesource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tilesource.json; sourceTree = "<group>"; };
+		AE6C0C3B1ADA3DD10027E4BA /* kMapBoxAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kMapBoxAccessToken.h; sourceTree = "<group>"; };
 		AEAA4ABE181BFAF700C66492 /* Location3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Location3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEAA4AC1181BFAF700C66492 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AEAA4AC3181BFAF700C66492 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -124,8 +125,9 @@
 		AEAA4B37181C0B5D00C66492 /* RouteInstruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteInstruction.m; sourceTree = "<group>"; };
 		AEAA4B39181C10D000C66492 /* KMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMLParser.h; sourceTree = "<group>"; };
 		AEAA4B3A181C10D000C66492 /* KMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMLParser.m; sourceTree = "<group>"; };
-		AEEA12ED18CB7996008A491F /* Mapbox.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Mapbox.bundle; path = Pods/MapBox/Resources/Mapbox.bundle; sourceTree = "<group>"; };
 		B80EF0AC29F54E19940D9EFE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF5AE55B95F7A79DEA3F50D2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F41A42CBB475AB4E9DE8E92A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,12 +158,11 @@
 		AEAA4AB5181BFAF600C66492 = {
 			isa = PBXGroup;
 			children = (
-				AEEA12ED18CB7996008A491F /* Mapbox.bundle */,
 				AEAA4AC7181BFAF700C66492 /* Location3 */,
 				AEAA4AE9181BFAF700C66492 /* Location3Tests */,
 				AEAA4AC0181BFAF700C66492 /* Frameworks */,
 				AEAA4ABF181BFAF700C66492 /* Products */,
-				8D1D89054DD04F28A22CBE8E /* Pods.xcconfig */,
+				BEDC4EE0439067E9C1EB89BE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,6 +197,7 @@
 				AEAA4AD6181BFAF700C66492 /* Main_iPad.storyboard */,
 				AEAA4AD9181BFAF700C66492 /* L3ViewController.h */,
 				AEAA4ADA181BFAF700C66492 /* L3ViewController.m */,
+				AE6C0C3B1ADA3DD10027E4BA /* kMapBoxAccessToken.h */,
 				AE5CD04318DB84C900CA2D90 /* tilesource.json */,
 				AEAA4B10181C070000C66492 /* L3SearchChooserViewController.h */,
 				AEAA4B11181C070000C66492 /* L3SearchChooserViewController.m */,
@@ -219,6 +221,7 @@
 				AEAA4B22181C085000C66492 /* UIAlertView-Blocks */,
 				AEAA4ADC181BFAF700C66492 /* Images.xcassets */,
 				AEAA4AC8181BFAF700C66492 /* Supporting Files */,
+				AE078BD919C5ED3300E00A2A /* TODO.txt */,
 			);
 			path = Location3;
 			sourceTree = "<group>";
@@ -285,6 +288,15 @@
 			path = "UIAlertView-Blocks";
 			sourceTree = "<group>";
 		};
+		BEDC4EE0439067E9C1EB89BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF5AE55B95F7A79DEA3F50D2 /* Pods.debug.xcconfig */,
+				F41A42CBB475AB4E9DE8E92A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -332,7 +344,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = L3;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Anders Hovmöller";
 				TargetAttributes = {
 					AEAA4ABD181BFAF700C66492 = {
@@ -367,7 +379,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEEA12EE18CB7996008A491F /* Mapbox.bundle in Resources */,
 				AEAA4B02181BFE6700C66492 /* TrackingHeadingDark@2x.png in Resources */,
 				AE5CD04418DB84C900CA2D90 /* tilesource.json in Resources */,
 				AEAA4B04181BFE6700C66492 /* TrackingLocationDark.png in Resources */,
@@ -378,6 +389,7 @@
 				AEAA4B05181BFE6700C66492 /* TrackingLocationDark@2x.png in Resources */,
 				AEAA4B2A181C085000C66492 /* README.md in Resources */,
 				AEAA4B06181BFE6700C66492 /* TrackingLocationOn.png in Resources */,
+				AE078BDA19C5ED3300E00A2A /* TODO.txt in Resources */,
 				AEAA4ADD181BFAF700C66492 /* Images.xcassets in Resources */,
 				AEAA4B32181C0A1800C66492 /* L3AnnotationDetailViewController.xib in Resources */,
 				AEAA4B07181BFE6700C66492 /* TrackingLocationOn@2x.png in Resources */,
@@ -428,7 +440,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -514,7 +526,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -543,7 +554,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -554,7 +565,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -577,7 +587,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -586,7 +596,7 @@
 		};
 		AEAA4AF4181BFAF700C66492 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D1D89054DD04F28A22CBE8E /* Pods.xcconfig */;
+			baseConfigurationReference = DF5AE55B95F7A79DEA3F50D2 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -603,7 +613,7 @@
 		};
 		AEAA4AF5181BFAF700C66492 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D1D89054DD04F28A22CBE8E /* Pods.xcconfig */;
+			baseConfigurationReference = F41A42CBB475AB4E9DE8E92A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -621,7 +631,6 @@
 		AEAA4AF7181BFAF700C66492 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Location3.app/Location3";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -644,7 +653,6 @@
 		AEAA4AF8181BFAF700C66492 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Location3.app/Location3";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MapBox/MapBox.h>
+#import <Mapbox-iOS-SDK/MapBox.h>
 #import "L3GeneralDelegate.h"
 
 @interface L3ViewController : UIViewController <RMMapViewDelegate, L3GeneralDelegate> {

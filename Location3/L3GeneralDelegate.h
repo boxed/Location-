@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <MapBox/MapBox.h>
+#import <Mapbox-iOS-SDK/MapBox.h>
 
 @interface L3GlobalState : NSObject
 

@@ -13,7 +13,7 @@
 {
     [super viewDidLoad];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Apply" style:UIBarButtonItemStyleBordered target:self action:@selector(apply:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Apply" style:UIBarButtonItemStylePlain target:self action:@selector(apply:)];
     self.navigationItem.rightBarButtonItem.tintColor = [UIColor colorWithHexString:kDarkerTintColorHex];
     
     txtField = [[UITextField alloc] initWithFrame: CGRectMake(10, 10, 310, 29)];

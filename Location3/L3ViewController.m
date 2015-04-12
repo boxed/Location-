@@ -13,6 +13,7 @@
 #import "L3AnnotationDetailViewController.h"
 #import "L3SearchChooserViewController.h"
 #import "RouteInstruction.h"
+#import "kMapBoxAccessToken.h"
 
 
 #define kNormalMapID  @"boxed.map-feoeptvi"
@@ -21,6 +22,8 @@
 
 
 @implementation L3ViewController
+
+@synthesize routeTarget;
 
 @synthesize currentAnnotation;
 
@@ -33,6 +36,8 @@
     annotationProcessQueue = [[NSOperationQueue alloc] init];
     
     BOOL useRetina = [[UIScreen mainScreen] scale] > 1.0;
+    
+    [RMConfiguration sharedInstance].accessToken = kMapBoxAccessToken;
 
     RMMapboxSource *onlineSource = [[RMMapboxSource alloc] initWithMapID:(useRetina ? kRetinaMapID : kNormalMapID)];
     

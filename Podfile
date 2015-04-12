@@ -1,3 +1,3 @@
-platform :ios, '7.0'
-pod 'MapBox'
+platform :ios, '8.2'
+pod 'Mapbox-iOS-SDK'
 pod 'Reachability'

@@ -1,29 +1,29 @@
 PODS:
-  - FMDB (2.0):
-    - FMDB/standard
-  - FMDB/common (2.0)
-  - FMDB/standard (2.0):
+  - FMDB (2.3):
+    - FMDB/standard (= 2.3)
+  - FMDB/common (2.3)
+  - FMDB/standard (2.3):
     - FMDB/common
-  - GRMustache (6.8.3):
+  - GRMustache (7.3.0):
     - JRSwizzle (~> 1.0)
   - JRSwizzle (1.0)
-  - MapBox (1.1.0):
-    - FMDB (= 2.0)
-    - GRMustache (= 6.8.3)
-    - SMCalloutView (= 1.1)
+  - Mapbox-iOS-SDK (1.6.0):
+    - FMDB (= 2.3)
+    - GRMustache (= 7.3.0)
+    - SMCalloutView (= 2.0)
   - Reachability (3.1.1)
-  - SMCalloutView (1.1)
+  - SMCalloutView (2.0)
 
 DEPENDENCIES:
-  - MapBox
+  - Mapbox-iOS-SDK
   - Reachability
 
 SPEC CHECKSUMS:
-  FMDB: a1fcc5227e7f38288f1b04b20045b9fdb8c92622
-  GRMustache: 90fc77ae45a5b8b5a4cf13874cae811461a1c930
-  JRSwizzle: 6242ff38485d870fc2636899048ee1ab883ae587
-  MapBox: 9cafea82d4e5caad7d121b50b1a76142695176d3
-  Reachability: be4883bb93f31e38266ae3365e5600a317aae735
-  SMCalloutView: 1c7d62044508a8d405c25495c380b17c613f769e
+  FMDB: 773d79bb74226959b7e2286b1d6e0bd857c88915
+  GRMustache: 6baee020c5644416c034f5afb1607f6219e7f753
+  JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
+  Mapbox-iOS-SDK: ee136ca5b7f853456b50dfd7a7f0e243288cf86f
+  Reachability: 8e9635e3cb4f98e7f825e51147f677ecc694d0e7
+  SMCalloutView: c1906604d47c058400ade5c9d52ab98aa77b7e76
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.36.3
