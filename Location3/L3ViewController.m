@@ -5,6 +5,7 @@
 //  Created by Anders Hovmöller on 2013-10-26.
 //  Copyright (c) 2013 Anders Hovmöller. All rights reserved.
 //
+#import <QuartzCore/QuartzCore.h>
 
 #import "L3ViewController.h"
 #import "L3SearchViewController.h"
@@ -75,11 +76,23 @@
     [self updateTrackingIcon];
     
     // Set up search button
-    UIButton* searchButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-40, 20, 40, 40)];
+    UIButton* searchButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-40, self.view.bounds.size.height-40, 40, 40)];
     [searchButton setImage:[UIImage imageNamed:@"search.png"] forState:UIControlStateNormal];
     [searchButton addTarget:self action:@selector(presentSearch:) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:searchButton];
-    
+
+    int width = 40;
+    stopSearchButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-width - 40, self.view.bounds.size.height-40, width, 40)];
+    [stopSearchButton setTitle:@"⨯" forState:UIControlStateNormal];
+    [stopSearchButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//    searchCancelButton.layer.borderWidth = 1.0f;
+//    searchCancelButton.layer.borderColor = [[UIColor redColor] CGColor];
+//    searchCancelButton.layer.cornerRadius = 20.0f;
+//    [searchCancelButton setImage:[UIImage imageNamed:@"search.png"] forState:UIControlStateNormal];
+    [stopSearchButton addTarget:self action:@selector(stopSearch:) forControlEvents:UIControlEventTouchDown];
+    stopSearchButton.hidden = YES;
+    [self.view addSubview:stopSearchButton];
+
     // Misc
     [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(saveState) userInfo:nil repeats:YES];
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(checkForRefresh) userInfo:nil repeats:YES];
@@ -146,6 +159,20 @@
         CGRect rect = [sender frame];
         self->popover = [[UIPopoverController alloc] initWithContentViewController:wrapper];
         [self->popover presentPopoverFromRect:rect inView:self.mapView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }
+}
+
+- (IBAction)stopSearch:(id)sender
+{
+    gGlobalState.customSearch = @"";
+    self->stopSearchButton.hidden = YES;
+    for (NSDictionary* filterType in gGlobalState.filterTypes) {
+        if ([filterType[@"selected"] boolValue]) {
+            [filterType setValue:[NSNumber numberWithBool:NO] forKey:@"selected"];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self removeAnnotationsForTag:filterType[@"tag"]];
+            });
+        }
     }
 }
 
@@ -320,6 +347,8 @@
 
 - (void)addAnnotationsForQuery:(NSString*)q markerSymbol:(NSString*)markerSymbol tag:(NSString*)tag service:(NSString*)service localSearch:(BOOL)isLocalSearch
 {
+    self->stopSearchButton.hidden = NO;
+    
     NSString* viewBox = @"";
     NSString* limit = @"20";
     if (isLocalSearch) {
@@ -432,6 +461,7 @@
         
         if (gGlobalState.customSearch && ![gGlobalState.customSearch isEqualToString:@""]) {
             [self addAnnotationsForQuery:gGlobalState.customSearch markerSymbol:kCustomMarkerSymbol tag:kCustomSearchTag service:kNominatimService localSearch:YES];
+            self->stopSearchButton.hidden = NO;
         }
         else {
             dispatch_async(dispatch_get_main_queue(), ^{

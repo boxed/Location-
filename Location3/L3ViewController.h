@@ -16,6 +16,7 @@
     NSDate* requestedRefresh;
     BOOL requestedRefreshUserInitiated;
     UIPopoverController* popover;
+    UIButton* stopSearchButton;
 
 }
 
