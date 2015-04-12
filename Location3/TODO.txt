@@ -1,3 +1,2 @@
-BUG: dropped pins can't be bookmarked
 MISFEATURE: search is cleared when zooming out from a hit
 IntentKit for jumping into google or apple maps for turn-by-turn: https://github.com/intentkit/IntentKit

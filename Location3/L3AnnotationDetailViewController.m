@@ -111,6 +111,11 @@
     [self.delegate refreshAndSave:self];
 }
 
+- (IBAction)dismissKeyboard:(id)sender
+{
+    [sender resignFirstResponder];
+}
+
 - (IBAction)updateControls:(id)sender
 {
     self.navigationItem.rightBarButtonItem.enabled = self.name.text.length != 0;
@@ -191,9 +196,6 @@
         alert.alertViewStyle = UIAlertViewStylePlainTextInput;
         alert.tag = NAME_ALERT_VIEW_TAG;
         [alert show];
-//        OCPromptView* prompt = [[OCPromptView alloc] initWithPrompt:@"Folder name" delegate:self cancelButtonTitle:@"Cancel" acceptButtonTitle:@"Create"];
-//        prompt.tag = NAME_ALERT_VIEW_TAG;
-//        [prompt show];
         return nil;
     }
     return indexPath;
